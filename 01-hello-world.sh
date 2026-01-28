@@ -4,6 +4,9 @@
 echo "Hello world!"
 echo "Hi , iam  learing Git"
 
+echo "Hi am working gcp"
+
+
 
 
 #echo
