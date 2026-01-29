@@ -2,4 +2,4 @@
 
 TIMESTAMP=$(date) 
 
-echo "Script executed at: $TIMRSTAMP"
+echo "Script executed at: $TIMESTAMP"
