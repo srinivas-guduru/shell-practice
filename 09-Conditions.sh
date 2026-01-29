@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NUMER=25
+NUMER=$1
 
 # -gt -> freater than
 # -it -> less than
@@ -8,6 +8,6 @@ NUMER=25
 # -na -> not equal
 
 if [ $NUMER -gt 20 ]; then
- echo "Given number: $NUMBER is greater than 20"
+    echo "Given number: $NUMBER is greater than 20"
 
 fi 
