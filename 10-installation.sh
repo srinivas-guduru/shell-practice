@@ -12,7 +12,7 @@ fi
 
 if [ $? -ne 0 ]; then
     echo "installing Nginx ... FAILURE"
-    exit1
+    exit 1
 else
      echo "installing Nginx ... SUCCESS"
 fi
