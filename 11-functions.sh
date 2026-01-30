@@ -14,7 +14,8 @@ VALIDATE(){
     else
        echo "$2 ...SUCCESS"
      fi
-}       
+}   
+    
 dnf install nginx -y
 VALIDATE $?  "installing Niginx"
 
