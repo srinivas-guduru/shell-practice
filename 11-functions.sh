@@ -22,5 +22,5 @@ VALIDATE $?  "installing Niginx"
 dnf install mysql -y
 VALIDATE $?  "installing mysql"
 
-dnf install nginx -y
+dnf install nodejs -y
 VALIDATE $?  "installing  nodejs"
