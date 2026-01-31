@@ -1,21 +1,18 @@
 #!/bin/bash
 
 USERID=$(id -u)
-LOGS_FOLDER="/var/logs/shell-scripts"
-LOGS_FILE="/var/logs/shell-scripts/$0.log"
+LOGS_FOLDER="var/log/shell-scripts"
+LOGS_FILE="/var/log/shell-scripts/$0.log"
 
 if [ $USERID -ne 0 ]; then
-   echo "$2 ... **FAILURE**" 
-else 
-    echo "$2 ... SUCCESS"
+   echo "Please run this script with root user access"
+   exit 1
 fi
-
-echo "" 
 
 VALIDATE(){
     if [ $1 -ne 0 ]; then
       echo "$2 ... FAILURE"
-    
+      exit 1
     else
       echo "$2 ... SUCCESS"
  fi
