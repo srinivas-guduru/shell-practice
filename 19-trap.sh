@@ -1,5 +1,6 @@
 #!/bin/bash
-set -a
+set -e
+
 echo "Hello world"
 echo "iam learing AWS"
 echo0 "find you in calss"
