@@ -19,9 +19,9 @@ for package in $@  # sudo sh 14-loops.sh nginx mysql nodejs
 do
 
        dnf list installed $package &>>$LOGS_FILE
- if [ $? -ne 0 ]; then
-    echo "$package not installed, installing now"
-     dnf install $package -y &>> $LOGS_FILE
+       if [ $? -ne 0 ]; then
+          echo "$package not installed, installing now"
+           dnf install $package -y &>> $LOGS_FILE
 else 
    echo -e "$G $package $N already instaleed, $Y skipping $N"
    
