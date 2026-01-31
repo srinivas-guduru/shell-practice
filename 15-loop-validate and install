@@ -5,7 +5,7 @@ LOGS_FOLDER="var/log/shell-scripts"
 LOGS_FILE="/var/log/shell-scripts/$0.log"
 
 if [ $USERID -ne 0 ]; then
-   echo "Please run this script with root user access"
+   echo "Please run this script with root user access"  | tee-a $LOGS_FILE
    exit 1
 fi
 
@@ -20,15 +20,16 @@ VALIDATE(){
 
 for package in $@  # sudo sh 14-loops.sh nginx mysql nodejs
 do
-dnf list installed $package &>>$LOGS_FiLE
-if [ $? -ne 0]; then
-echo "$package not installed, installing now"
-dnf install $package -y &>> $LOGS_FILE
-VALIDATE $?  "$package installation"
+  dnf list installed $package &>>$LOGS_FiLE
+if [ $? -ne 0 ]; then
+  echo "$package not installed, installing now"
+  dnf install $package -y &>> $LOGS_FILE
+  VALIDATE $?  "$package installation"
 
 else 
    echo "$package alredy instaleed, skipping"
    
 
-   fi
+fi
+
 done
