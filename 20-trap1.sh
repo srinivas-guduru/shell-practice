@@ -1,6 +1,6 @@
 #!/bin/bash
 set
-trap 'echo "Ther is an error in $LINENO, Command: $BaSH_COMMAND"' ERR
+trap 'echo "There is an error in $LINENO, Command: $BaSH_COMMAND"' ERR
 
 USERID=$(id -u)
 LOGS_FOLDER="var/log/shell-scripts"
@@ -15,7 +15,6 @@ if [ $USERID -ne 0 ]; then
    exit 1
 fi
  
-
 for package in $@  # sudo sh 14-loops.sh nginx mysql nodejs
 do
 
