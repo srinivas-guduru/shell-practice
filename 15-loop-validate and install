@@ -25,9 +25,8 @@ if [ $? -ne 0 ]; then
   echo "$package not installed, installing now"
   dnf install $package -y &>> $LOGS_FILE
   VALIDATE $?  "$package installation"
-
 else 
-   echo "$package alredy instaleed, skipping"
+   echo "$package already instaleed, skipping"
    
 
 fi
