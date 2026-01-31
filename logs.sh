@@ -1,6 +1,8 @@
 #!/bin/bash
 
 USERID=$(id -u)
+LOGS_FOLDER="/var/logs/shell-scripts"
+LOGS_FILE="/var/logs/shell-scripts/$0.log"
 
 if [ $USERID -ne 0 ]; then
    echo "$2 ... **FAILURE**" 
@@ -19,11 +21,11 @@ VALIDATE(){
  fi
 }   
 
-dnf install nginx -y 
+dnf install nginx -y &>> $LOGS_FILE
 VALIDATE $?  "installing Niginx"
 
-dnf install 1mysql -y
+dnf install 1mysql -y &>> $LOGS_FILE
 VALIDATE $?  "installing mysql"
 
-dnf install nodejs -y
+dnf install nodejs -y &>> $LOGS_FILE
 VALIDATE $?  "installing  nodejs"
